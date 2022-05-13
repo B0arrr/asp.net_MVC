@@ -30,6 +30,22 @@
       <_ContentIncludedByDefault Remove="Views\Hostels\Hostels.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Hostels\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Hostels\Reservations.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\RoleManager\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hostel\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hostel\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hostel\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hostel\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hostel\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pokoj\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pokoj\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pokoj\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pokoj\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pokoj\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Admin\Views" />
+      <Folder Include="Areas\SuperAdmin\Views" />
     </ItemGroup>
 
 </Project>

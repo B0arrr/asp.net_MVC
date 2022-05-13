@@ -12,6 +12,7 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
+    [Area("Admin")]
     public class HostelController : Controller
     {
         private readonly IHostelRepository _hostelRepository;

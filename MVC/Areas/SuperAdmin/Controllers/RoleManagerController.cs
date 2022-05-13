@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MVC.Controllers;
 
+[Area("SuperAdmin")]
 public class RoleManagerController : Controller
 {
     private readonly RoleManager<IdentityRole> _roleManager;
@@ -15,14 +16,12 @@ public class RoleManagerController : Controller
         _roleManager = roleManager;
     }
 
-    [Authorize(Roles = "SuperAdmin")]
     public async Task<IActionResult> Index()
     {
         var roles = await _roleManager.Roles.ToListAsync();
         return View(roles);
     }
 
-    [Authorize(Roles = "SuperAdmin")]
     [HttpPost]
     public async Task<IActionResult> AddRole(string roleName)
     {

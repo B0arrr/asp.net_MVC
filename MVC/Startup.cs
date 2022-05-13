@@ -73,6 +73,18 @@ namespace MVC
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+                    name: "MyArea",
+                    areaName: "SuperAdmin",
+                    pattern: "SuperAdmin/{controller=UserRoles}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute(
+                    name: "MyArea",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Hostel}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute(
+                    name: "MyArea",
+                    areaName: "Basic",
+                    pattern: "Basic/{controller=View}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -21,19 +21,31 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Hostel" asp-action="Index">Hostele</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Pokoj" asp-action="Index">Pokoje</a>
-                    </li>
-                    @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin"))
+                    @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index">Role Manager</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Hostel" asp-action="Index">Hostele</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UserRoles" asp-action="Index">User Roles</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Pokoj" asp-action="Index">Pokoje</a>
+                        </li>
+                    }
+                    @if (User.IsInRole("Basic"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Basic" asp-controller="HostelView" asp-action="Index">Hostele</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Basic" asp-controller="PokojView" asp-action="Index">Pokoje</a>
+                        </li>
+                    }
+                    @if (User.IsInRole("SuperAdmin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="SuperAdmin" asp-controller="RoleManager" asp-action="Index">Role Manager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="SuperAdmin" asp-controller="UserRoles" asp-action="Index">User Roles</a>
                         </li>
                     }
                 </ul>

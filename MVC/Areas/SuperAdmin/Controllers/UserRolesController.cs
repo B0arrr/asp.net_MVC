@@ -10,6 +10,7 @@ using MVC.Models;
 
 namespace MVC.Controllers;
 
+[Area("SuperAdmin")]
 public class UserRolesController : Controller
 {
     private readonly UserManager<MVCUser> _userManager;
@@ -20,8 +21,7 @@ public class UserRolesController : Controller
         _roleManager = roleManager;
         _userManager = userManager;
     }
-
-    [Authorize(Roles = "SuperAdmin")]
+    
     public async Task<IActionResult> Index()
     {
         var users = await _userManager.Users.ToListAsync();
@@ -39,14 +39,12 @@ public class UserRolesController : Controller
 
         return View(userRolesViewModel);
     }
-
-    [Authorize(Roles = "SuperAdmin")]
+    
     private async Task<List<string>> GetUserRoles(MVCUser user)
     {
         return new List<string>(await _userManager.GetRolesAsync(user));
     }
-
-    [Authorize(Roles = "SuperAdmin")]
+    
     public async Task<IActionResult> Manage(string userId)
     {
         ViewBag.userId = userId;
